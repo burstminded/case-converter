@@ -1,0 +1,51 @@
+main {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+main h2 {
+    font-size: 2.5em;
+    color: #566e3d;
+    width: 75%;
+    text-align: center;
+}
+
+main form {
+    padding: 1em;
+    margin-top: 1em;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main form div {
+    padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+}
+
+main form input {
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+    border: 2px solid #6d9dc5;
+    border-radius: 0.4em;
+    padding: 0.25em 0.4em;
+}
+
+main form div select {
+    font-size: 1.5em;
+    border: 2px solid #6d9dc5;
+    padding: 0.25em 0.4em;
+    border-radius: 0.25em;
+    color: #566e3d;
+}
