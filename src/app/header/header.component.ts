@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ConverterService } from '../converter.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+
+  constructor(public ConverterService: ConverterService) {}
+  
+ 
 }
