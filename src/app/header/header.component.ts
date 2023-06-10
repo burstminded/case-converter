@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ConverterService } from '../converter.service';
+import { Component } from '@angular/core';
+import { ConverterService, currencyObj } from '../converter.service';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +8,11 @@ import { ConverterService } from '../converter.service';
 })
 export class HeaderComponent {
 
+  
 
-  constructor(public ConverterService: ConverterService) {}
+  constructor(public converter: ConverterService) {}
+  
+  
   
  
 }

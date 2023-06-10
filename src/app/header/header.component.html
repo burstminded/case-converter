@@ -3,7 +3,9 @@
     <h1>Currency converter</h1>
     <div class="exchange-rates">
         <h2>Current exchange rates: </h2>
-
-
+        <div class="rates-container">
+            <p>EUR = {{this.converter.currenciesAvailable['EUR'] | number: '1.0-2'}}UAH</p>
+            <p>USD = {{this.converter.currenciesAvailable['USD'] | number: '1.0-2'}}UAH</p>
+        </div>
     </div>
 </header>

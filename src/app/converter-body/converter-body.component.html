@@ -1,22 +1,22 @@
 <link rel="stylesheet" href="converter-body.component.css">
 <main>
     <h2>Enter Amount You Would Like to Convert</h2>
-    <form action="">
-        <div>
-            <select name="" id="">
-                <option value="">UAH - Ukrainian Hryvnia</option>
-                <option value="">USD - Unated States Dollar</option>
-                <option value="">EUR - European Union Euro</option>
+    <form [formGroup]='convertGroup'>
+        <div class="left-inputs">
+            <select class="select-left" formControlName='leftSelect' (change)="handleChange('left')">
+                <option>UAH</option>
+                <option>USD</option>
+                <option>EUR</option>
             </select>
-            <input type="text" value="1">
+            <input type="number" class="input-left" formControlName='leftInput' (input)="handleChange('left')">
         </div>
-        <div>
-            <select name="" id="">
-                <option value="">USD - Unated States Dollar</option>
-                <option value="">UAH - Ukrainian Hryvnia</option>
-                <option value="">EUR - European Union Euro</option>
+        <div class="right-inputs">
+            <select class="select-left" formControlName='rightSelect' (change)="handleChange('right')">
+                <option>UAH</option>
+                <option>USD</option>
+                <option>EUR</option>
             </select>
-            <input type="text" value="37.25">
+            <input type="number" class="input-right" formControlName='rightInput' (input)="handleChange('right')">
         </div>
     </form>
 </main>

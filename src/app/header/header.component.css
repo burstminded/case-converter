@@ -9,14 +9,25 @@ header {
     color:#F9DEC9;
 }
 
-header .exchange-rates span {
-    display: inline-block;
-    padding: 5px 0;
-    margin-right: 10px;
+header .exchange-rates .rates-container {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.25em;
+    justify-content: start;
+    align-items: center;
     color: #fff;
     font-size: 1.4em;
 }
 
 header img {
     width: 50px;
+}
+
+header .exchange-rates {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 32%;
+    justify-items: space-evenly;
+    align-content: center;
+    gap: 0.25em;
 }

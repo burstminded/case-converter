@@ -19,7 +19,7 @@ export class ConverterService {
 
   
 
-  currenciesAvailable: currencyObj[] = [];
+  currenciesAvailable: currencyObj = {};
 
   constructor(
     private http: HttpClient,
@@ -33,10 +33,10 @@ export class ConverterService {
         for(let i = 0; i < currencies.length; i++) {
           let currency: currencyReceiveObj = currencies[i];
           if(currency.cc == 'USD' || currency.cc == 'EUR') {
-            this.currenciesAvailable.push({[currency.cc]:+currency.rate})
+            this.currenciesAvailable[currency.cc] = +currency.rate
           }
         }
-        this.currenciesAvailable.push({'UAH':1});
+        this.currenciesAvailable['UAH'] = 1;
       })
     )
   }
