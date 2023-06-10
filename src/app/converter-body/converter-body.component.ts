@@ -11,12 +11,11 @@ export class ConverterBodyComponent implements OnInit {
   priceUSD: number = 20
   priceEUR: number = 24
   
-  currencyArr: string[] = []
 
   convertGroup = new FormGroup({
-    leftInput: new FormControl('1'),
+    leftInput: new FormControl('0'),
     leftSelect: new FormControl('USD'),
-    rightInput: new FormControl('20'),
+    rightInput: new FormControl('0'),
     rightSelect: new FormControl('UAH')
   })
 
@@ -27,11 +26,10 @@ export class ConverterBodyComponent implements OnInit {
     this.convertGroup.disable()
 
     setTimeout(() => {
-      this.currencyArr = Object.keys(this.converter.currenciesAvailable);
       this.priceUSD = this.converter.currenciesAvailable['USD'];
       this.priceEUR = this.converter.currenciesAvailable['EUR'];
       this.convertGroup.enable()
-    }), 4002
+    }), 3002
   }
 
   constructor(public converter: ConverterService,
@@ -49,12 +47,12 @@ export class ConverterBodyComponent implements OnInit {
     }
 
     if(side === 'left') {
-      let res = (+leftNumber * (this.converter.currenciesAvailable[rightCurr] / this.converter.currenciesAvailable[leftCurr])).toFixed(2)
+      let res = (+leftNumber * (this.converter.currenciesAvailable[leftCurr] / this.converter.currenciesAvailable[rightCurr])).toFixed(2)
       this.convertGroup.patchValue({
         rightInput: res
       }) 
       } else if (side === 'right') {
-        let res = (+rightNumber * (this.converter.currenciesAvailable[leftCurr] / this.converter.currenciesAvailable[rightCurr])).toFixed(2)
+        let res = (+rightNumber * (this.converter.currenciesAvailable[rightCurr] / this.converter.currenciesAvailable[leftCurr])).toFixed(2)
       this.convertGroup.patchValue({
         leftInput: res
       })
